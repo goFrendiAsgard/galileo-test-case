@@ -16,8 +16,18 @@
         socket.on("button state", function(msg){
             if(msg == 1){
                 $('#state').html('Pressed');
+                var url = '/turn-on';
+                
+                $.ajax({
+                    'url' : url
+                });
             }else{
                 $('#state').html('');
+                var url = '/turn-off' ;
+                
+                $.ajax({
+                    'url' : url
+                });
             }
         });
     </script>
